@@ -5,6 +5,7 @@ from .models import Resource, Meeting, MeetingMinutes, Event
 def index(request):
     return render(request, 'club/index.html')
 
-def resources(request):
+def getResources(request):
     resource_list=Resource.objects.all()
     return render(request, 'club/resources.html', {'resource_list': resource_list})
+

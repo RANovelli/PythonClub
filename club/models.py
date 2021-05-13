@@ -12,9 +12,6 @@ class Meeting(models.Model):
     def __str__(self):
         return self.meetingtitle
 
-        class Meta:
-            db_table='meeting'
-
 class MeetingMinutes(models.Model):
     minutes=models.CharField(max_length=255)
     meetingid=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
@@ -22,9 +19,6 @@ class MeetingMinutes(models.Model):
 
     def __str__(self):
         return self.minutes
-
-        class Meta:
-            db_table='meetingminutes'
 
 class Resource(models.Model):
     resourcename=models.CharField(max_length=255)
@@ -37,9 +31,6 @@ class Resource(models.Model):
     def __str__(self):
         return self.resourcename
 
-        class Meta:
-            db_table='resource'
-
 class Event(models.Model):
     eventtitle=models.CharField(max_length=255)
     location=models.TextField(null=True, blank=True)
@@ -50,9 +41,4 @@ class Event(models.Model):
 
     def __str__(self):
         return self.eventtitle
-
-        class Meta:
-            db_table='event'            
-
-
-
+         
