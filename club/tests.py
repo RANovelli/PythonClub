@@ -20,7 +20,7 @@ class MeetingTest(TestCase):
         self.meeting=Meeting(meetingtitle='Intro', meetingdate=datetime.date(2021,5,24), meetingtime='5:00', meetinglocation='Vivace', meetingagenda='Python')
     
     def test_meetingstring(self):
-        self.assertEqual(str(self.type), 'Python Intro')
+        self.assertEqual(str(self.meeting), 'Intro')
 
     def test_table(self):
         self.assertEqual(str(Meeting._meta.db_table), 'club_meeting')
